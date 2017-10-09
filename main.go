@@ -56,7 +56,7 @@ func main() {
 	})
 
 	router.GET("/cairo", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "kim.tmp.html", nil)
+		c.HTML(http.StatusOK, "kim.tmpl.html", nil)
 	})
 
 	router.Run(":" + port)
