@@ -48,6 +48,12 @@
 			"revision": "7fcbc72f853b92b5720db4a6b8482be612daef24"
 		},
 		{
+			"checksumSHA1": "xEL+dG6YKDU7jGJ0jI2JnuJxU5k=",
+			"path": "github.com/mohan3d/apixu-go",
+			"revision": "6d7a5f1e101af69a2813df3c547a02de0b0d6d31",
+			"revisionTime": "2017-09-18T18:32:32Z"
+		},
+		{
 			"checksumSHA1": "hKZGpbFuCrkE4s1vxubKK1aFlfI=",
 			"path": "golang.org/x/net/context",
 			"revision": "d9558e5c97f85372afee28cf2b6059d7d3818919"
