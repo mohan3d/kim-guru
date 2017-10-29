@@ -2,8 +2,9 @@
 # kim-guru
 
 A clone of [kim.guru](https://kim.guru/) in golang.   
-It uses [apixu-api](https://www.apixu.com/api.aspx) and [apixu-go](https://github.com/mohan3d/apixu-go).
+It uses [apixu-api](https://www.apixu.com/api.aspx) and [apixu-go](https://github.com/mohan3d/apixu-go).    
 
+[Deployed version](https://kim-guru-clone.herokuapp.com/)
 
 ## Running Locally
 
