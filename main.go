@@ -38,33 +38,8 @@ func getWeatherInfo(city string) (*weatherInfo, error) {
 	}, nil
 }
 
-// func weather(w http.ResponseWriter, r *http.Request) {
-// 	query := r.URL.Query()
-// 	lat := query.Get("lat")
-// 	long := query.Get("long")
-// 	q := fmt.Sprintf("%v,%v", lat, long)
-
-// 	weather, err := getWeatherInfo(q)
-
-// 	if err != nil {
-// 		panic(err)
-// 	}
-
-// 	weatherJSON, err := json.Marshal(weather)
-
-// 	if err != nil {
-// 		panic(err)
-// 	}
-
-// 	w.Header().Set("Content-Type", "application/json")
-// 	w.Write(weatherJSON)
-// }
-
 func main() {
 	port := os.Getenv("PORT")
-	// apixuAPIKey := os.Getenv("APIXU_KEY")
-	// apixuClient := apixu.NewClient(apixuAPIKey)
-	// apixuClient.Current("Cairo")
 
 	if port == "" {
 		log.Fatal("$PORT must be set")
@@ -92,22 +67,7 @@ func main() {
 		}
 
 		c.JSON(http.StatusOK, weather)
-		// weatherJSON, err := json.Marshal(weather)
-
-		// if err != nil {
-		// 	panic(err)
-		// }
-
-		// c.BindJSON
 	})
-
-	// router.GET("/", func(c *gin.Context) {
-	// 	c.HTML(http.StatusOK, "index.tmpl.html", nil)
-	// })
-
-	// router.GET("/cairo", func(c *gin.Context) {
-	// 	c.HTML(http.StatusOK, "kim.tmpl.html", nil)
-	// })
 
 	router.Run(":" + port)
 }
