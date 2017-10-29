@@ -67,9 +67,9 @@ func getRandomPicURL(day bool, code int) string {
 	} else {
 		state = "Cloudy"
 	}
-	directory := fmt.Sprintf("/static/pics/%s/%s", daytime, state)
+	directory := fmt.Sprintf("static/pics/%s/%s", state, daytime)
 
-	return fmt.Sprintf("%s/%s", directory, getRandomPic(directory))
+	return fmt.Sprintf("/%s/%s", directory, getRandomPic(directory))
 }
 
 func main() {
