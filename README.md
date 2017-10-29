@@ -1,7 +1,7 @@
 
 # kim-guru
 
-A clone of [kim.guru](https://kim.guru/) in golang.
+A clone of [kim.guru](https://kim.guru/) in golang.   
 It uses [apixu-api](https://www.apixu.com/api.aspx) and [apixu-go](https://github.com/mohan3d/apixu-go).
 
 
@@ -22,7 +22,7 @@ You should also install [govendor](https://github.com/kardianos/govendor).
 
 ```sh
 $ heroku create
-$ heroku config:add APIXU_KEY=<YOUR APIXU-API KEY>
+$ heroku config:add APIXU_KEY=<YOUR-APIXU-API-KEY>
 $ git push heroku master
 $ heroku open
 ```
