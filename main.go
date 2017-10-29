@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 
@@ -14,11 +16,12 @@ import (
 var apiKey = os.Getenv("APIXU_KEY")
 
 type weatherInfo struct {
-	TempC   float64
-	TempF   float64
-	Status  string
-	Country string
-	Region  string
+	TempC    float64
+	TempF    float64
+	Status   string
+	Country  string
+	Region   string
+	ImageURL string
 }
 
 func getWeatherInfo(city string) (*weatherInfo, error) {
@@ -30,12 +33,43 @@ func getWeatherInfo(city string) (*weatherInfo, error) {
 	}
 
 	return &weatherInfo{
-		TempC:   currentWeather.Current.TempC,
-		TempF:   currentWeather.Current.TempF,
-		Status:  currentWeather.Current.Condition.Text,
-		Country: currentWeather.Location.Country,
-		Region:  currentWeather.Location.Region,
+		TempC:    currentWeather.Current.TempC,
+		TempF:    currentWeather.Current.TempF,
+		Status:   currentWeather.Current.Condition.Text,
+		Country:  currentWeather.Location.Country,
+		Region:   currentWeather.Location.Region,
+		ImageURL: getRandomPicURL(true, currentWeather.Current.Condition.Code),
 	}, nil
+}
+
+func getRandomPic(directory string) string {
+	files, err := ioutil.ReadDir(directory)
+
+	if err != nil {
+		return ""
+	}
+	return files[rand.Intn(len(files))].Name()
+}
+
+func getRandomPicURL(day bool, code int) string {
+	var state, daytime string
+
+	if day {
+		daytime = "day"
+	} else {
+		daytime = "night"
+	}
+
+	if code == 1000 {
+		state = "Clear"
+	} else if code == 1030 || code == 1135 {
+		state = "Haze"
+	} else {
+		state = "Cloudy"
+	}
+	directory := fmt.Sprintf("/static/pics/%s/%s", daytime, state)
+
+	return fmt.Sprintf("%s/%s", directory, getRandomPic(directory))
 }
 
 func main() {
