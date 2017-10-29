@@ -73,7 +73,7 @@
                 $("#temprature").html(result.TempC + " C | " + result.TempF + " F" + " — " + result.Status);
                 $("#location").html(result.Region + ", " + result.Country);
                 $("body").css({
-                    "background": "linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1) ), url('https://kim.guru/images/night/Clear/13.jpg')"
+                    "background": "linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1) ), url(" + result.ImageURL + ")"
                 });
                 $("#check").hide();
                 $("#results").show();

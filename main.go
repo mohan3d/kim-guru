@@ -38,7 +38,7 @@ func getWeatherInfo(city string) (*weatherInfo, error) {
 		Status:   currentWeather.Current.Condition.Text,
 		Country:  currentWeather.Location.Country,
 		Region:   currentWeather.Location.Region,
-		ImageURL: getRandomPicURL(true, currentWeather.Current.Condition.Code),
+		ImageURL: getRandomPicURL(false, currentWeather.Current.Condition.Code),
 	}, nil
 }
 
