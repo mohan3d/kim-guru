@@ -1,9 +1,6 @@
 
-# kim-guru
-A clone of [kim.guru](https://kim.guru/) in golang.   
-It uses [apixu-api](https://www.apixu.com/api.aspx) and [apixu-go](https://github.com/mohan3d/apixu-go).    
-
-[Deployed version](https://kim-guru-clone.herokuapp.com/)
+# kim-guru   
+A clone of [kim.guru](https://kim.guru/) in golang, It uses [apixu-api](https://www.apixu.com/api.aspx) and [apixu-go](https://github.com/mohan3d/apixu-go).    
 
 
 ## Installation
@@ -23,7 +20,12 @@ $ heroku local
 Your app should now be running on [localhost:5000](http://localhost:5000/).    
 You should also install [govendor](https://github.com/kardianos/govendor).
 
-## Deploy to Heroku
+## Deployment
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mohan3d/kim-guru)    
+
+**Note:** Don't forget to set config var APIXU_KEY.
+
+## Manual deployment
 ```sh
 $ heroku create
 $ heroku config:add APIXU_KEY=<YOUR-APIXU-API-KEY>
