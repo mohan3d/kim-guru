@@ -1,14 +1,14 @@
 {
-  "name": "Start on Heroku: Go",
-  "description": "Go Getting Started Example App",
+  "name": "kim-guru",
+  "description": "A clone of https://kim.guru/ in golang",
   "keywords": [
-    "getting-started",
     "go",
-    "sample",
-    "example"
+    "gin",
+    "apixu",
+    "kim-guru"
   ],
   "image": "heroku/go:1.6",
-  "mount_dir": "src/github.com/heroku/go-getting-started",
-  "website": "http://github.com/heroku/go-getting-started",
-  "repository": "http://github.com/heroku/go-getting-started"
+  "mount_dir": "src/github.com/mohan3d/kim-guru",
+  "website": "https://github.com/mohan3d/kim-guru",
+  "repository": "https://github.com/mohan3d/kim-guru"
 }
